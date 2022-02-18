@@ -12,7 +12,7 @@ const TodoForm = ({addTodo}) => {
     <Container maxWidth="sm">
         <form onSubmit={handleSubmit}>
             <FormControl fullWidth={true}>
-                <TextField label="I will do" required={true} style={{ marginTop: 10}} value={text} onChange={(e)=> setText(e.target.value)}></TextField>
+                <TextField label="Add Task..." required={true} style={{ marginTop: 10}} value={text} onChange={(e)=> setText(e.target.value)}></TextField>
                 <Button variant="contained" type="submit" style={{ marginTop: 10}} type="submit">Add</Button>
             </FormControl>
         </form>
