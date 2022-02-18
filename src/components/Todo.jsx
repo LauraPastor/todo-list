@@ -9,8 +9,8 @@ const Todo = ({title, checkTodo, id, isCompleted, deleteTodo }) => {
   return (
     <div>
         <Container>
-            <Card variant="outlined" style={{marginTop: 35, background: "lightblue"}}>
-                <CardContent>
+            <Card style={{marginTop: 35, background: "lightblue"}}>
+                <CardContent sx={{ margin: -2 }}>
                     <Typography variant="h5" component="h2" style={todoStyle}>
                         <IconButton onClick={markComplete}>
                             <Checkbox  color='primary' />

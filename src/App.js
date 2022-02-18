@@ -4,12 +4,12 @@ import { v4 } from "uuid";
 import { Container } from "@mui/material";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
-import InitialList from "./InitialList";
-import { Button } from "@mui/material";
+import InitialList from "./mockdata/InitialList";
+import SortTodo from "./components/SortTodo";
 
 
 function App() {
-  const [todos, setTodos, todolist] = useState(InitialList)
+  const [todos, setTodos] = useState(InitialList)
 
   const checkTodo = (id) => {
     console.log(id)
@@ -20,11 +20,6 @@ function App() {
       return todo
     }))
   }
-
-//const titles = InitialList.map(item => item.title)
-// const sortAlph = (titles) => {
-//   titles.sort( (a, b) => a.localeCompare(b, 'en', {ignorePunctuation: true}))
-// }
 
   const deleteTodo = (id) => {
     setTodos(todos.filter(todo => todo.id !== id ))
@@ -38,36 +33,14 @@ function App() {
     }
     setTodos([...todos, newTodo])
 
-// const names = ["Raquel", "Laura", "Anna", "Francesco"]
-// names.sort()
-// return names
-
   }
-   const sortAlph = (todo, style) => {
-
-
-   
-   const orderedTodos = InitialList.map(todo => 
-    
-    
-    todo.title).sort((a, b) => a.localeCompare(b, "en")
-    
-    )
-    
-     setTodos(orderedTodos)
-
-    }
-
-
   return (
     <Container maxWidth="sm">
       <h1 style={{textAlign: 'center'}}>ToDo List</h1>
       <TodoForm addTodo={addTodo}/> 
-      <Button onClick={sortAlph}>Sort Alphabetically</Button>
+      <SortTodo />
       <TodoList todos={todos} checkTodo={checkTodo} deleteTodo={deleteTodo} />
     </Container>
-
   );
 }
-
 export default App;
