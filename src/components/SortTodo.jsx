@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import {Select, MenuItem, Container, InputLabel, FormControl} from '@mui/material'
 import InitialList from '../mockdata/InitialList'
 
-const SortTodo = (text) => {
+const SortTodo = (text, todo) => {
 
     const [todos, setTodos] = useState(InitialList)
     const [value, setValue] = useState()

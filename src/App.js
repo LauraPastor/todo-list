@@ -12,11 +12,9 @@ function App() {
   const [todos, setTodos] = useState(InitialList)
 
   const checkTodo = (id) => {
-    console.log(id)
     setTodos(todos.map((todo) => {
-      if(todo.id == id)
+      if(todo.id === id)
       todo.isCompleted = !todo.isCompleted
-      console.log(todo.isCompleted)
       return todo
     }))
   }
