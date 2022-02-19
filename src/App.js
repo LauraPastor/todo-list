@@ -10,9 +10,10 @@ import {
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
 import InitialList from './mockdata/InitialList';
+import useLocalStorage from './hooks/useLocalStorage';
 
 function App() {
-  const [todos, setTodos] = useState(InitialList);
+  const [todos, setTodos] = useLocalStorage("todos" ,InitialList);
 
   const checkTodo = (id) => {
     console.log(id);
